@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.brun0xp</groupId>
-    <artifactId>shopguiaddon</artifactId>
+    <artifactId>shopguibank</artifactId>
     <version>1.0</version>
-    <name>ShopGuiAddon</name>
-    <description>An addon for the ShopGui+ plugin that adds a central bank and permission discounts</description>
+    <name>ShopGUIBank</name>
+    <description>An addon for the ShopGui+ plugin that adds a central bank</description>
 
     <properties>
         <project.build.sorceEncoding>UTF-8</project.build.sorceEncoding>

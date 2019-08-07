@@ -1,6 +1,6 @@
-package com.github.brun0xp.shopguiaddon.resource;
+package com.github.brun0xp.shopguibank.resource;
 
-import com.github.brun0xp.shopguiaddon.Main;
+import com.github.brun0xp.shopguibank.Main;
 
 public class LanguageFile extends AbstractFile{
 

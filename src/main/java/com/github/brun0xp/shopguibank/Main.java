@@ -1,13 +1,12 @@
-package com.github.brun0xp.shopguiaddon;
+package com.github.brun0xp.shopguibank;
 
-import com.github.brun0xp.shopguiaddon.commands.manager.CommandManager;
-import com.github.brun0xp.shopguiaddon.listener.ListenerManager;
-import com.github.brun0xp.shopguiaddon.resource.LanguageFile;
+import com.github.brun0xp.shopguibank.commands.manager.CommandManager;
+import com.github.brun0xp.shopguibank.listener.ListenerManager;
+import com.github.brun0xp.shopguibank.resource.LanguageFile;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import net.milkbowl.vault.economy.Economy;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 

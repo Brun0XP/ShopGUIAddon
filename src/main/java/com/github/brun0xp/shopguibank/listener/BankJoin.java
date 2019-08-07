@@ -1,7 +1,7 @@
-package com.github.brun0xp.shopguiaddon.listener;
+package com.github.brun0xp.shopguibank.listener;
 
-import com.github.brun0xp.shopguiaddon.Main;
-import com.github.brun0xp.shopguiaddon.resource.Message;
+import com.github.brun0xp.shopguibank.Main;
+import com.github.brun0xp.shopguibank.resource.Message;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;

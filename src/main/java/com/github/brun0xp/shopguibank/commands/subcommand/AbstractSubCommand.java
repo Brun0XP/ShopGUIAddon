@@ -1,4 +1,4 @@
-package com.github.brun0xp.shopguiaddon.commands.subcommand;
+package com.github.brun0xp.shopguibank.commands.subcommand;
 
 import lombok.Getter;
 import org.bukkit.command.CommandSender;

@@ -1,8 +1,8 @@
-package com.github.brun0xp.shopguiaddon.commands.manager;
+package com.github.brun0xp.shopguibank.commands.manager;
 
-import com.github.brun0xp.shopguiaddon.Main;
-import com.github.brun0xp.shopguiaddon.commands.subcommand.*;
-import com.github.brun0xp.shopguiaddon.resource.Message;
+import com.github.brun0xp.shopguibank.Main;
+import com.github.brun0xp.shopguibank.commands.subcommand.*;
+import com.github.brun0xp.shopguibank.resource.Message;
 import lombok.Getter;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

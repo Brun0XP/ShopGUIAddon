@@ -1,7 +1,7 @@
-package com.github.brun0xp.shopguiaddon.commands.subcommand;
+package com.github.brun0xp.shopguibank.commands.subcommand;
 
-import com.github.brun0xp.shopguiaddon.Main;
-import com.github.brun0xp.shopguiaddon.resource.Message;
+import com.github.brun0xp.shopguibank.Main;
+import com.github.brun0xp.shopguibank.resource.Message;
 import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
