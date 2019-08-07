@@ -1,9 +1,6 @@
 language: en_US
 
-mysql:
-  enable: false
-  host: localhost
-  port: 3306
-  database: spigotplugintemp
-  username: username
-  password: password
+bank:
+  enable: true
+  name: Bank
+  can-join: false

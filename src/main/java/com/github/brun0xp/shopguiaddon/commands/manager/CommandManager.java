@@ -1,8 +1,8 @@
-package com.github.brun0xp.spigotplugintemp.commands.manager;
+package com.github.brun0xp.shopguiaddon.commands.manager;
 
-import com.github.brun0xp.spigotplugintemp.Main;
-import com.github.brun0xp.spigotplugintemp.commands.Example;
-import com.github.brun0xp.spigotplugintemp.resource.Message;
+import com.github.brun0xp.shopguiaddon.Main;
+import com.github.brun0xp.shopguiaddon.commands.CentralBank;
+import com.github.brun0xp.shopguiaddon.resource.Message;
 import lombok.Getter;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,9 +20,9 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     private Set<AbstractCommand> abstractCommands = new HashSet<>();
 
-    public CommandManager(Main main){
-        this.main = main;
-        this.getAbstractCommands().add(new Example());
+    public CommandManager(){
+        this.main = Main.getMain();
+        this.getAbstractCommands().add(new CentralBank());
 
         for (AbstractCommand abstractCommand : this.getAbstractCommands()) {
             this.getMain().getCommand(abstractCommand.getName()).setExecutor(this);

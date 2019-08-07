@@ -1,6 +1,6 @@
-package com.github.brun0xp.spigotplugintemp.resource;
+package com.github.brun0xp.shopguiaddon.resource;
 
-import com.github.brun0xp.spigotplugintemp.Main;
+import com.github.brun0xp.shopguiaddon.Main;
 import com.google.common.base.Charsets;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

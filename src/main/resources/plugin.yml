@@ -1,10 +1,12 @@
 name: ${project.name}
-main: com.github.brun0xp.spigotplugintemp.Main
+main: com.github.brun0xp.shopguiaddon.Main
 version: ${project.version}
 description: ${project.description}
 author: Brun0XP
+depend: [ShopGUIPlus, Vault]
 api-version: 1.13
 
 commands:
-  example:
-    description: Example command
+  centralbank:
+    description: Command to see server money
+    aliases: [bancocentral]

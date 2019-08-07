@@ -3,4 +3,11 @@ messages:
     usage: '&4&lError &7» &cUsage: {usage}'
     permission: '&4&lError &7» &cYou do not have permission ''&7{permission}&c'' to use this command!'
     unknown: '&4&lError &7» &cAn unknown error occurred while executing the command, please contact support.'
-  example: '&6&lExample &7» &eThis is an example command.'
+    bank-not-found: '&4&lError &7» &cCentral bank not found, operation canceled!'
+  bank:
+    without-money:
+      - ''
+      - '&4&lAlert &7» &c&lCentral bank &cdoes not have sufficient funds'
+      - '&4&lAlert &7» &cBalance available: &7{balance}'
+      - ''
+    cant-join: '&4&lError &7» &cThis is an NPC account.!'

@@ -1,6 +1,6 @@
-package com.github.brun0xp.spigotplugintemp.resource;
+package com.github.brun0xp.shopguiaddon.resource;
 
-import com.github.brun0xp.spigotplugintemp.Main;
+import com.github.brun0xp.shopguiaddon.Main;
 
 public class LanguageFile extends AbstractFile{
 

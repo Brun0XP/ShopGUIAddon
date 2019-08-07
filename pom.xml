@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.brun0xp</groupId>
-    <artifactId>spigotplugintemp</artifactId>
+    <artifactId>shopguiaddon</artifactId>
     <version>1.0</version>
-    <name>SpigotPluginTemp</name>
-    <description>A template to make spigot plugins</description>
+    <name>ShopGuiAddon</name>
+    <description>An addon for the ShopGui+ plugin that adds a central bank and permission discounts</description>
 
     <properties>
         <project.build.sorceEncoding>UTF-8</project.build.sorceEncoding>
@@ -27,8 +27,11 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>craftlife</id>
+            <url>https://artifactory.craftlife.com.br/artifactory/libs-release-local</url>
+        </repository>
     </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -48,7 +51,11 @@
             <version>1.18.6</version>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.brcdev</groupId>
+            <artifactId>ShopGUIPlus</artifactId>
+            <version>1.19.8</version>
+        </dependency>
     </dependencies>
 
     <build>
