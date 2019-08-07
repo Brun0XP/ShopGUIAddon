@@ -22,7 +22,7 @@ public class Balance extends AbstractSubCommand {
             new Message("messages.error.bank-not-found").colored().send(commandSender);
             return true;
         }
-        new Message("messages.balance").set("balance", main.getEcon().format(main.getEcon().getBalance(main.getName())))
+        new Message("messages.balance").set("balance", main.getEcon().format(main.getEcon().getBalance(main.getBankName())))
                 .colored().send(commandSender);
         return true;
     }

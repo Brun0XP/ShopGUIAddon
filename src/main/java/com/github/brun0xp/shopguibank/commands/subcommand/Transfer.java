@@ -1,6 +1,7 @@
 package com.github.brun0xp.shopguibank.commands.subcommand;
 
 import com.github.brun0xp.shopguibank.Main;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ public class Transfer extends AbstractSubCommand {
     }
     @Override
     public boolean onCommand(CommandSender commandSender, String[] strings) {
-        commandSender.sendMessage("§a§lBank §7» §6Coming soon...");
-        return false;
+        commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lBank &7» &6Coming soon..."));
+        return true;
     }
 
     @Override

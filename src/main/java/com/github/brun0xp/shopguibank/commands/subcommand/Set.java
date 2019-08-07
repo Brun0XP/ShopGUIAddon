@@ -22,6 +22,7 @@ public class Set extends AbstractSubCommand {
             new Message("messages.error.bank-not-found").colored().send(commandSender);
             return true;
         }
+        if (strings.length == 0) return false;
         try {
             double amount = Double.valueOf(strings[0]);
             main.getEcon().withdrawPlayer(main.getBankName(), main.getEcon().getBalance(main.getBankName()));
@@ -31,7 +32,7 @@ public class Set extends AbstractSubCommand {
         } catch (NumberFormatException e) {
             return false;
         }
-        return false;
+        return true;
     }
 
     @Override

@@ -21,6 +21,7 @@ public class Add extends AbstractSubCommand {
             new Message("messages.error.bank-not-found").colored().send(commandSender);
             return true;
         }
+        if (strings.length == 0) return false;
         try {
             double amount = Double.parseDouble(strings[0]);
             main.getEcon().depositPlayer(main.getBankName(), amount);

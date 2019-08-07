@@ -60,7 +60,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender commandSender, Command command, String label, String[] strings) {
         if (strings.length == 1) {
-            return Arrays.asList("set", "balance", "deposit");
+            return Arrays.asList("add", "balance", "set", "transfer");
         }
         AbstractSubCommand abstractSubCommand = this.getSubCommand(strings[1]);
         if (abstractSubCommand == null) {
