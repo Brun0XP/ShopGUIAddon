@@ -4,6 +4,15 @@ messages:
     permission: '&4&lError &7» &cYou do not have permission ''&7{permission}&c'' to use this command!'
     unknown: '&4&lError &7» &cAn unknown error occurred while executing the command, please contact support.'
     bank-not-found: '&4&lError &7» &cCentral bank not found, operation canceled!'
+  help:
+    - ''
+    - '&a&lBank &7» &fPlugin commands'
+    - ''
+    - ' &a» &f/bank balance &7&o- Show bank balance'
+    - ' &a» &f/bank transfer <amount> &7&o- Transfer from your account to central bank'
+    - ' &a» &c/bank add <amount> &7&o- Add money to bank'
+    - ' &a» &c/bank set <amount> &7&o- Set bank balance'
+    - ''
   bank:
     without-money:
       - ''
@@ -11,3 +20,6 @@ messages:
       - '&4&lAlert &7» &cBalance available: &7{balance}'
       - ''
     cant-join: '&4&lError &7» &cThis is an NPC account.!'
+  add: '&a&lBank &7» &fHave been added &6{amount} &fto central bank'
+  balance: '&a&lBank &7» &fBalance: &6{balance}'
+  set: '&a&lBank &7» &fCentral bank balance set to &6{amount}'

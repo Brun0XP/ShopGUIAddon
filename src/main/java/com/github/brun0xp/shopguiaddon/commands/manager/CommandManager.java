@@ -1,7 +1,7 @@
 package com.github.brun0xp.shopguiaddon.commands.manager;
 
 import com.github.brun0xp.shopguiaddon.Main;
-import com.github.brun0xp.shopguiaddon.commands.CentralBank;
+import com.github.brun0xp.shopguiaddon.commands.subcommand.*;
 import com.github.brun0xp.shopguiaddon.resource.Message;
 import lombok.Getter;
 import org.bukkit.command.Command;
@@ -9,41 +9,47 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Getter
 public class CommandManager implements CommandExecutor, TabCompleter {
 
     private Main main;
 
-    private Set<AbstractCommand> abstractCommands = new HashSet<>();
+    private java.util.Set<AbstractSubCommand> abstractSubCommands = new HashSet<>();
 
-    public CommandManager(){
-        this.main = Main.getMain();
-        this.getAbstractCommands().add(new CentralBank());
-
-        for (AbstractCommand abstractCommand : this.getAbstractCommands()) {
-            this.getMain().getCommand(abstractCommand.getName()).setExecutor(this);
-        }
+    public CommandManager(Main main){
+        this.main = main;
+        this.getAbstractSubCommands().add(new Add());
+        this.getAbstractSubCommands().add(new Balance());
+        this.getAbstractSubCommands().add(new Set());
+        this.getAbstractSubCommands().add(new Transfer());
+        this.getMain().getCommand("bank").setExecutor(this);
     }
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] strings) {
-        AbstractCommand abstractCommand = this.getCommand(command.getName());
-        if (abstractCommand == null)
-            return false;
+        if (strings.length == 0) {
+            new Message("messages.help", true).colored().send(commandSender);
+            return true;
+        }
+        AbstractSubCommand abstractSubCommand = this.getSubCommand(strings[0]);
+        if (abstractSubCommand == null) {
+            new Message("messages.help", true).colored().send(commandSender);
+            return true;
+        }
 
         try {
-            if (commandSender.hasPermission(abstractCommand.getPermission())) {
-                if (!abstractCommand.onCommand(commandSender, strings))
-                    new Message("messages.error.usage").set("usage", abstractCommand.getUsage())
+            if (commandSender.hasPermission(abstractSubCommand.getPermission())) {
+                if (!abstractSubCommand.onCommand(commandSender, Arrays.copyOfRange(strings, 1, strings.length)))
+                    new Message("messages.error.usage").set("usage", abstractSubCommand.getUsage(command.getName()))
                             .colored().send(commandSender);
-            } else {
-                new Message("messages.error.permission").set("permission", abstractCommand.getPermission())
+            } else
+                new Message("messages.error.permission").set("permission", abstractSubCommand.getPermission())
                         .colored().send(commandSender);
-            }
         } catch (Exception e){
             new Message("messages.error.unknown").colored().send(commandSender);
             e.printStackTrace();
@@ -53,13 +59,16 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender commandSender, Command command, String label, String[] strings) {
-        AbstractCommand abstractCommand = this.getCommand(command.getName());
-        if (abstractCommand == null) {
-            return null;
+        if (strings.length == 1) {
+            return Arrays.asList("set", "balance", "deposit");
+        }
+        AbstractSubCommand abstractSubCommand = this.getSubCommand(strings[1]);
+        if (abstractSubCommand == null) {
+            return new ArrayList<>();
         }
         try {
-            if (commandSender.hasPermission(abstractCommand.getPermission())) {
-                return abstractCommand.onTabComplete(commandSender, strings);
+            if (commandSender.hasPermission(abstractSubCommand.getPermission())) {
+                return abstractSubCommand.onTabComplete(commandSender, Arrays.copyOfRange(strings, 1, strings.length));
             }
         } catch (Exception e){
             new Message("messages.error.unknown").colored().send(commandSender);
@@ -68,8 +77,8 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         return null;
     }
 
-    private AbstractCommand getCommand(String name) {
-        for (AbstractCommand command : this.getAbstractCommands()) {
+    private AbstractSubCommand getSubCommand(String name) {
+        for (AbstractSubCommand command : this.getAbstractSubCommands()) {
             if (command.getName().equalsIgnoreCase(name))
                 return command;
             for (String aliases : command.getAliases())

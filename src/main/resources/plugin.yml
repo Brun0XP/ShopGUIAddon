@@ -7,6 +7,6 @@ depend: [ShopGUIPlus, Vault]
 api-version: 1.13
 
 commands:
-  centralbank:
+  bank:
     description: Command to see server money
-    aliases: [bancocentral]
+    aliases: [banco]

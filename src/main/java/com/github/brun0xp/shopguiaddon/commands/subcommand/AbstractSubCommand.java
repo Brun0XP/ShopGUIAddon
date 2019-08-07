@@ -1,4 +1,4 @@
-package com.github.brun0xp.shopguiaddon.commands.manager;
+package com.github.brun0xp.shopguiaddon.commands.subcommand;
 
 import lombok.Getter;
 import org.bukkit.command.CommandSender;
@@ -6,14 +6,14 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 
 @Getter
-public abstract class AbstractCommand {
+public abstract class AbstractSubCommand {
 
     protected String name;
     protected String permission;
     protected String[] args;
     protected String[] aliases;
 
-    public AbstractCommand(String name, String permission, String[] args, String[] aliases) {
+    public AbstractSubCommand(String name, String permission, String[] args, String[] aliases) {
         this.name = name;
         this.permission = permission;
         this.args = args;
@@ -24,7 +24,7 @@ public abstract class AbstractCommand {
 
     public abstract List<String> onTabComplete(CommandSender commandSender, String[] strings);
 
-    public String getUsage() {
-        return "/" + this.getName() + String.join(" ", args);
+    public String getUsage(String command) {
+        return "/" + command + " " + this.getName() + " " + String.join(" ", args);
     }
 }
