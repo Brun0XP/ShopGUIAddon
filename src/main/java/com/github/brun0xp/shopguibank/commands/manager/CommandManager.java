@@ -21,8 +21,8 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     private java.util.Set<AbstractSubCommand> abstractSubCommands = new HashSet<>();
 
-    public CommandManager(Main main){
-        this.main = main;
+    public CommandManager(){
+        this.main = Main.getMain();
         this.getAbstractSubCommands().add(new Add());
         this.getAbstractSubCommands().add(new Balance());
         this.getAbstractSubCommands().add(new Set());
