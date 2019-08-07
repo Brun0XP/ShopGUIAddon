@@ -13,13 +13,13 @@ messages:
     - ' &a» &c/banco add <quantia> &7&o- Adiciona saldo ao banco'
     - ' &a» &c/banco setar <quantia> &7&o- Defini o saldo atual do banco'
     - ''
-    bank:
-      without-money:
-        - ''
-        - '&4&lAlerta &7» &c&lBanco Central &cnão possui fundos suficiente'
-        - '&4&lAlerta &7» &cSaldo disponível: &7{balance}'
-        - ''
-      cant-join: '&4&lErro &7» &cEsta é uma conta NPC!'
-    add: '&a&lBanco &7» &fFoi adicionado &6{amount} &fao banco central'
-    balance: '&a&lBanco &7» &fSaldo: &6{balance}'
-    set: '&a&lBanco &7» &fSaldo do banco central definido para &6{amount}'
+  bank:
+    without-money:
+      - ''
+      - '&4&lAlerta &7» &c&lBanco Central &cnão possui fundos suficiente'
+      - '&4&lAlerta &7» &cSaldo disponível: &7{balance}'
+      - ''
+    cant-join: '&4&lErro &7» &cEsta é uma conta NPC!'
+  add: '&a&lBanco &7» &fFoi adicionado &6{amount} &fao banco central'
+  balance: '&a&lBanco &7» &fSaldo: &6{balance}'
+  set: '&a&lBanco &7» &fSaldo do banco central definido para &6{amount}'
